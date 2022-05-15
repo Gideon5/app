@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::get('article', 'App\Http\Controllers\ArticleController@show');
+Route::get('create', 'App\Http\Controllers\ArticleController@create');
+Route::get('edit', 'App\Http\Controllers\ArticleController@edit');
+
