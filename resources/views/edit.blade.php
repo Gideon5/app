@@ -1,7 +1,7 @@
  
  <div class="container">
 
- <form action="/article" enctype="multipart/form-data" method="post">
+ <form action="/edit" enctype="multipart/form-data" method="post">
     @csrf
 
    <div class="row">

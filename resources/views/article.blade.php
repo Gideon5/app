@@ -15,8 +15,8 @@
 <td>{{ $article->title }}</td>
 <td>{{ $article->body }}</td>
 <td>
-<form action="{{ route('articles.destroy',$article->id) }}" method="Post">
-<a class="btn btn-primary" href="{{ route('articles.edit',$article->id) }}">Edit</a>
+<form action="{{ route('destroy',$article->id) }}" method="Post">
+<a class="btn btn-primary" href="{{ route('edit',$article->id) }}">Edit</a>
 @csrf
 @method('DELETE')
 <button type="submit" class="btn btn-danger">Delete</button>
