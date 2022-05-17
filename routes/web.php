@@ -22,4 +22,4 @@ Route::get('/', function () {
 Route::get('article', 'App\Http\Controllers\ArticleController@show');
 Route::get('create', 'App\Http\Controllers\ArticleController@create');
 Route::get('edit', 'App\Http\Controllers\ArticleController@edit');
-Route::post('article', 'App\Http\Controllers\ArticleController@store');
+Route::post('create', 'App\Http\Controllers\ArticleController@store');

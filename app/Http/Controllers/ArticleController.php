@@ -20,24 +20,52 @@ class ArticleController extends Controller
 
     }
 
-    public function edit() {
+    public function edit(Request $request, $id) {
 
-        return view('edit');
-
-
-    }
-
-    public function store() {
-
-        $input = request()->validate([
+        $request->validate([
             'title' => 'required',
             'body' => 'required' 
    
    
          ]);
 
+         $article = Article::find($id);
+         $company->title = $request->title;
+         $company->body = $request->body;
+         $article->save();
+
+
          return redirect('/article');
 
+
+    }
+
+    public function store(Request $request) {
+
+            $request->validate([
+            'title' => 'required',
+            'body' => 'required' 
+   
+   
+         ]);
+
+         $article = new Article;
+         $article->title = $request->title;
+         $article->body = $request->body;
+         $article->save();
+
+         return redirect('/article');
+
+    }
+
+
+    
+
+
+    public function destroy(Company $conpany){
+
+        $article->delete();
+        return redirect('/article');
     }
     
        

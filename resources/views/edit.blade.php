@@ -1,13 +1,13 @@
  
  <div class="container">
 
- <form action="/p" enctype="multipart/form-data" method="post">
+ <form action="/article" enctype="multipart/form-data" method="post">
     @csrf
 
    <div class="row">
         <div class="col-8 offset-2">
             <div class="row">
-                <h1>Create New Article</h1>
+                <h1>Edit Article</h1>
             </div>
 
         <div class="row mb-3">
