@@ -30,8 +30,8 @@ class ArticleController extends Controller
          ]);
 
          $article = Article::find($id);
-         $company->title = $request->title;
-         $company->body = $request->body;
+         $article->title = $request->title;
+         $article->body = $request->body;
          $article->save();
 
 
