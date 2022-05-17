@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|
+d|s
 */
 
 
@@ -22,4 +22,4 @@ Route::get('/', function () {
 Route::get('article', 'App\Http\Controllers\ArticleController@show');
 Route::get('create', 'App\Http\Controllers\ArticleController@create');
 Route::get('edit', 'App\Http\Controllers\ArticleController@edit');
-
+Route::post('article', 'App\Http\Controllers\ArticleController@store');

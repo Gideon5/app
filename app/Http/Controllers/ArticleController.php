@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -23,6 +24,19 @@ class ArticleController extends Controller
 
         return view('edit');
 
+
+    }
+
+    public function store() {
+
+        $input = request()->validate([
+            'title' => 'required',
+            'body' => 'required' 
+   
+   
+         ]);
+
+         return redirect('/article');
 
     }
     
