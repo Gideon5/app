@@ -10,7 +10,9 @@ class ArticleController extends Controller
     
     public function show() {
 
-        return view('article');
+        $articles = Article::orderBy('id')->get();
+
+        return view('article',compact($articles));
        }
 
     public function create() {
