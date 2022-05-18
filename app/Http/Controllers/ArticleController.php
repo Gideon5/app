@@ -12,7 +12,7 @@ class ArticleController extends Controller
 
         $articles = Article::orderBy('id')->get();
 
-        return view('article',compact($articles));
+        return view('article',compact('articles'));
        }
 
     public function create() {
@@ -64,7 +64,7 @@ class ArticleController extends Controller
     
 
 
-    public function destroy(Company $conpany){
+    public function destroy(Article $article){
 
         $article->delete();
         return redirect('/article');
