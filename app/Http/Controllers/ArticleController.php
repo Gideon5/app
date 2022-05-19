@@ -37,7 +37,7 @@ class ArticleController extends Controller
          $article->save();
 
 
-         return redirect('/article');
+         return redirect('/edit');
 
 
     }

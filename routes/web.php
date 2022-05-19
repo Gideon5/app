@@ -21,6 +21,6 @@ Route::get('/', function () {
 
 Route::get('article', 'App\Http\Controllers\ArticleController@show');
 Route::get('create', 'App\Http\Controllers\ArticleController@create');
-Route::get('edit', 'App\Http\Controllers\ArticleController@edit')->name('edit');
+Route::get('edit/{id}', 'App\Http\Controllers\ArticleController@edit')->name('edit');
 Route::post('create', 'App\Http\Controllers\ArticleController@store');
 Route::post('delete', 'App\Http\Controllers\ArticleController@destroy')->name('delete');
