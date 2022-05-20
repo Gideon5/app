@@ -21,8 +21,20 @@ class ArticleController extends Controller
 
 
     }
+    
+    public function edit(Article $article) {
 
-    public function edit(Request $request, $id) {
+        
+        
+
+        return view('edit');
+
+
+        
+   
+    }
+
+    public function update(Request $request, $id) {
 
         $request->validate([
             'title' => 'required',
@@ -30,6 +42,7 @@ class ArticleController extends Controller
    
    
          ]);
+         
 
          $article = Article::find($id);
          $article->title = $request->title;
@@ -37,7 +50,7 @@ class ArticleController extends Controller
          $article->save();
 
 
-         return redirect('/edit');
+         return redirect('/article');
 
 
     }
@@ -64,11 +77,17 @@ class ArticleController extends Controller
     
 
 
-    public function destroy(Article $article){
+    public function destroy(Request $request){
+        dd($request);
 
-        $article->delete();
-        return redirect('/article');
+        $id = $request->input('id');
+        Article::find($id)->delete();
+
+        return redirect()->route('article')
+            ->with('success', 'Product deleted successfully');
     }
+
+
     
        
 }

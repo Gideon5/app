@@ -16,11 +16,12 @@
 <td>{{ $article->body }}</td>
 <td>
 <form action="{{ route('delete',$article->id) }}" method="Post">
-<a class="btn btn-primary" href="{{ route('edit',$article->id) }}">Edit</a>
+
 @csrf
-@method('DELETE')
+@method('delete')
 <button type="submit" class="btn btn-danger">Delete</button>
 </form>
+<a class="btn btn-primary" href="{{ route('edit',$article->id) }}">Edit</a>
 </td>
 </tr>
 @endforeach
