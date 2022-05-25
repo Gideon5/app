@@ -10,10 +10,11 @@ class ArticleController extends Controller
     
     public function show() {
 
-        $articles = Article::orderBy('id')->get();
+      $articles = Article::all();
 
-        return view('article',compact('articles'));
+        return view('article',['articles' => $articles]);
        }
+
 
     public function create() {
 
@@ -24,33 +25,33 @@ class ArticleController extends Controller
     
     public function edit(Article $article) {
 
+
+
         
         
 
-        return view('edit');
+        return view('edit', ['article'  => $article]);
 
 
         
    
     }
 
-    public function update(Request $request, $id) {
-
-        $request->validate([
-            'title' => 'required',
-            'body' => 'required' 
-   
-   
-         ]);
-         
-
-         $article = Article::find($id);
-         $article->title = $request->title;
-         $article->body = $request->body;
-         $article->save();
+    public function update(Article $article) {
 
 
-         return redirect('/article');
+        $article->update([
+            'title' => request('title'),
+            'body' => request('body'),
+        ]);
+
+
+
+        return redirect('/article');
+
+       
+
+        
 
 
     }
@@ -77,14 +78,12 @@ class ArticleController extends Controller
     
 
 
-    public function destroy(Request $request){
-        dd($request);
+    public function destroy(Article $article){
 
-        $id = $request->input('id');
-        Article::find($id)->delete();
+        
+        $article->delete();
 
-        return redirect()->route('article')
-            ->with('success', 'Product deleted successfully');
+        return redirect('/article');
     }
 
 

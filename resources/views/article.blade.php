@@ -15,12 +15,15 @@
 <td>{{ $article->title }}</td>
 <td>{{ $article->body }}</td>
 <td>
-<form action="{{ route('delete',$article->id) }}" method="Post">
+<form action="/article/{{ $article->id}}" >
 
 @csrf
-@method('delete')
-<button type="submit" class="btn btn-danger">Delete</button>
+@method('DELETE')
+
+<button type="" class="btn btn-danger">Delete</button>
 </form>
+
+
 <a class="btn btn-primary" href="{{ route('edit',$article->id) }}">Edit</a>
 </td>
 </tr>

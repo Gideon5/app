@@ -1,7 +1,8 @@
  
  <div class="container">
 
- <form action="/edit" enctype="multipart/form-data" method="post">
+ <form action="/article/{{ $article->id }}" enctype="multipart/form-data" method="post">
+     @method('PUT')
     @csrf
 
    <div class="row">
@@ -16,37 +17,21 @@
                             <label for="title" class="col-md-4 col-form-label">{{ __('Title') }}</label>
 
                             
-                                <input id="title"
-                                 type="text"
-                                  class="form-control @error('title') is-invalid @enderror"
-                                   name="title" value="{{ old('title') }}"
-                                     autocomplete="caption" autofocus>
+                                <input id="title" type="text" name="title" value= {{ $article->title}} >
 
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                              
                             
                         </div>
 
                         <div class="row mb-3">
 
 
-<label for="body" class="col-md-4 col-form-label">{{ __('Body') }}</label>
+<label for="body" >{{ __('Body') }}</label>
 
 
-    <input id="body"
-     type="text"
-      class="form-control @error('body') is-invalid @enderror"
-       name="body" value="{{ old('body') }}"
-         autocomplete="body" autofocus>
+    <textarea id="body" name="body"> {{ $article->body}}</textarea>
 
-    @error('body')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
+    
 
 </div>
 
@@ -54,7 +39,7 @@
              
             
             <div class="row pt-4">
-                <button class="btn btn-primary">Edit  Article</button>
+                <button class="btn btn-primary">Update  </button>
             </div>
         </div>
 

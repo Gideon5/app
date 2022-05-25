@@ -18,15 +18,10 @@
                             
                                 <input id="title"
                                  type="text"
-                                  class="form-control @error('title') is-invalid @enderror"
                                    name="title" value="{{ old('title') }}"
                                      autocomplete="caption" autofocus>
 
-                                @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                               
                             
                         </div>
 
@@ -38,15 +33,10 @@
 
     <input id="body"
      type="text"
-      class="form-control @error('body') is-invalid @enderror"
        name="body" value="{{ old('body') }}"
          autocomplete="body" autofocus>
 
-    @error('body')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-    @enderror
+  
 
 </div>
 
