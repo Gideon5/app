@@ -15,7 +15,7 @@
 <td>{{ $article->title }}</td>
 <td>{{ $article->body }}</td>
 <td>
-<form action="/article/{{ $article->id}}" >
+<form action="{{ route('delete',$article->id) }}" method="Post">
 
 @csrf
 @method('DELETE')

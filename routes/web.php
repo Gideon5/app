@@ -22,6 +22,6 @@ Route::get('/', function () {
 Route::get('article', 'App\Http\Controllers\ArticleController@show')->name('article');
 Route::get('create', 'App\Http\Controllers\ArticleController@create');
 Route::get('article/{article}/edit', 'App\Http\Controllers\ArticleController@edit')->name('edit');
-Route::delete('/article/{article}','App\Http\Controllers\ArticleController@destroy');
+Route::delete('/article/{article}','App\Http\Controllers\ArticleController@destroy')->name('delete');
 Route::put('/article/{article}', 'App\Http\Controllers\ArticleController@update');
 Route::post('create', 'App\Http\Controllers\ArticleController@store');
