@@ -25,3 +25,12 @@ Route::get('article/{article}/edit', 'App\Http\Controllers\ArticleController@edi
 Route::delete('/article/{article}','App\Http\Controllers\ArticleController@destroy')->name('delete');
 Route::put('/article/{article}', 'App\Http\Controllers\ArticleController@update');
 Route::post('create', 'App\Http\Controllers\ArticleController@store');
+
+
+Route::get('car_create', 'App\Http\Controllers\CarsController@create');
+Route::post('car_create', 'App\Http\Controllers\CarsController@store');
+Route::get('car/{car}/edit', 'App\Http\Controllers\CarsController@edit')->name('edit');
+Route::get('car', 'App\Http\Controllers\CarsController@show')->name('car');
+
+
+
