@@ -17,6 +17,7 @@ class CarsController extends Controller
     
 
     public function store(Request $request) {
+
         
 
         $request->validate([
@@ -33,7 +34,7 @@ class CarsController extends Controller
      $car->car_name = $request->car_name;
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
-     $car->description = $request->car_description;
+     $car->car_description = $request->car_description;
      $car->save();
      
      
@@ -49,5 +50,50 @@ public function show() {
 
       return view('cars.home',['cars' => $cars]);
      }
+
+
+public function edit(Car $car) {
+
+    return view('cars.edit', ['car'  => $car]);
+
+
+}
+
+
+public function update(Car $car) {
+
+   
+
+    request()->validate([
+
+        'car_name' => 'required',
+        'car_model' => 'required',
+        'car_color' => 'required',
+        'car_description' => 'required'
+    ]);
+    
+
+
+    $car->update([
+        'car_name' => request('car_name'),
+        'car_model' => request('car_model'),
+        'car_color' => request('car_color'),
+        'car_description' => request('car_description')
+    ]);
+
+
+
+    return redirect('/cars/home');
+}
+
+
+
+public function destroy(Car $car){
+
+        
+    $car->delete();
+
+    return redirect('/cars/home');
+}
 
 }

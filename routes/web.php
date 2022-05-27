@@ -26,11 +26,13 @@ Route::delete('/article/{article}','App\Http\Controllers\ArticleController@destr
 Route::put('/article/{article}', 'App\Http\Controllers\ArticleController@update');
 Route::post('create', 'App\Http\Controllers\ArticleController@store');
 
-
+Route::get('cars/home', 'App\Http\Controllers\CarsController@show')->name('home');
 Route::get('car_create', 'App\Http\Controllers\CarsController@create');
 Route::post('car_create', 'App\Http\Controllers\CarsController@store');
 Route::get('car/{car}/edit', 'App\Http\Controllers\CarsController@edit')->name('edit');
-Route::get('car', 'App\Http\Controllers\CarsController@show')->name('car');
+Route::put('/cars/home/{car}', 'App\Http\Controllers\CarsController@update');
+Route::delete('/cars/home/{car}','App\Http\Controllers\CarsController@destroy')->name('delete');
+
 
 
 
