@@ -36,3 +36,8 @@ Route::delete('/cars/home/{car}','App\Http\Controllers\CarsController@destroy')-
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
