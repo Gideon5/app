@@ -19,6 +19,7 @@ class CreateCarsTable extends Migration
             $table->string('car_model');
             $table->string('car_color');
             $table->string('car_description');
+            $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
         });
     }
