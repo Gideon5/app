@@ -19,6 +19,10 @@
 
     <label >{{ __('Description') }}</label>
     <input id="description" type="text" name="car_description" value="{{ old('car_description') }}" >
+    
+    <label >{{ __('Select car Image') }}</label>
+    <input id="image" type="file" name="image" value="{{ old('Image') }}" >
+
 
                                
                             

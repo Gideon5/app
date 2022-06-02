@@ -5,20 +5,23 @@
    <h1>Cars</h1>
    <table class="table table-bordered">
 <tr>
-<th>Car No</th>
-<th>Car Name</th>
-<th>Car Model</th>
-<th>Car Color</th>
-<th>Car Description</th>
-<th width="280px">Action</th>
+<th >Car No</th>
+<th >Car Name</th>
+<th >Car Model</th>
+<th >Car Color</th>
+<th >Car Description</th>
+<th >Picture</th>
+<th >Action</th>
 </tr>
 @foreach ($cars as $car)
 <tr>
 <td>{{ $car->id }}</td>
 <td>{{ $car->car_name }}</td>
 <td>{{ $car->car_model }}</td>
-<td>{{ $car->color }}</td>
-<td>{{ $car->description }}</td>
+<td>{{ $car->car_color }}</td>
+<td>{{ $car->car_description }}</td>
+<td>{{ $car->image }}</td>
+
 
 <td>
 <form action="{{ route('delete',$car->id) }}" method="Post">

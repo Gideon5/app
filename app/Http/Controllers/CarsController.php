@@ -35,6 +35,15 @@ class CarsController extends Controller
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
      $car->car_description = $request->car_description;
+
+     if($request->hasfile('image'))
+     {
+         $file = $request->file('image');
+         $extension = $file->getClientOriginalExtension();
+         $filename = time().'.'. $extension;
+         $file->move('uploads/cars/', $filename);
+         $car->image = $filename;
+     }
      $car->save();
      
      
@@ -61,6 +70,7 @@ public function edit(Car $car) {
 
 
 public function update(Car $car) {
+    
 
    
 
