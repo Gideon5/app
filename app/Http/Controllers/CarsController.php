@@ -11,7 +11,7 @@ class CarsController extends Controller
     public function create() {
 
         return view('cars.create');
-
+ 
 
     }
     
@@ -22,7 +22,7 @@ class CarsController extends Controller
 
         $request->validate([
             'car_name' => 'required',
-            'car_model' => 'required',
+            'car_model' => 'required', 
             'car_color' => 'required',
             'car_description' => 'required' 
    
