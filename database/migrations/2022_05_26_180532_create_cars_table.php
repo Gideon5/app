@@ -20,7 +20,7 @@ class CreateCarsTable extends Migration
             $table->string('car_color');
             $table->string('image');
             $table->string('car_description');
-            $table->unsignedBigInteger('id'); 
+            $table->id('id'); 
 
             $table->foreign('id')->references('id')->on('users');
             $table->timestamps();
