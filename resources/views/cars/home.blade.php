@@ -12,6 +12,7 @@
 <th >Car Description</th>
 <th >Picture</th>
 <th >Action</th>
+<th >User ID</th>
 </tr>
 @foreach ($cars as $car)
 <tr>
@@ -20,7 +21,10 @@
 <td>{{ $car->car_model }}</td>
 <td>{{ $car->car_color }}</td>
 <td>{{ $car->car_description }}</td>
-<td>{{ $car->image }}</td>
+<td>{{ $car->user_id }}</td>
+<td>
+  <img src="{{ asset($car->image) }}">
+</td>
 
 
 <td>

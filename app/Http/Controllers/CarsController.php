@@ -24,7 +24,9 @@ class CarsController extends Controller
             'car_name' => 'required',
             'car_model' => 'required', 
             'car_color' => 'required',
-            'car_description' => 'required' 
+            'car_description' => 'required',
+            'image' => ['required', 'image'] ,
+            
    
    
          ]);
@@ -35,6 +37,7 @@ class CarsController extends Controller
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
      $car->car_description = $request->car_description;
+     
 
      if($request->hasfile('image'))
      {
