@@ -21,7 +21,7 @@
 <td>{{ $car->car_model }}</td>
 <td>{{ $car->car_color }}</td>
 <td>{{ $car->car_description }}</td>
-<td>{{ $car->user_id }}</td>
+<td>{{ $car->id }}</td>
 <td>
   <img src="{{ asset($car->image) }}">
 </td>

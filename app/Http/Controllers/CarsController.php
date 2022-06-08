@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Car;
 
@@ -37,6 +38,7 @@ class CarsController extends Controller
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
      $car->car_description = $request->car_description;
+     $car->id = Auth::id();
      
 
      if($request->hasfile('image'))
