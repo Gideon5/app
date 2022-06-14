@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Car;
+use App\Models\User;
 
 class CarsController extends Controller
 {
@@ -111,4 +112,16 @@ public function destroy(Car $car){
     return redirect('/cars/home');
 }
 
+
+
+public function details() {
+
+    $cars = Car::with('user')->get();
+    $users = User::with('cars')->get();
+
+      return view('cars.cars', compact('cars', 'users'));
+     }
+
+
 }
+

@@ -32,6 +32,8 @@ Route::post('car_create', 'App\Http\Controllers\CarsController@store');
 Route::get('car/{car}/edit', 'App\Http\Controllers\CarsController@edit')->name('edit');
 Route::put('/cars/home/{car}', 'App\Http\Controllers\CarsController@update');
 Route::delete('/cars/home/{car}','App\Http\Controllers\CarsController@destroy')->name('delete');
+Route::get('cars/users', 'App\Http\Controllers\CarsController@details')->name('users');
+
 
 
 
