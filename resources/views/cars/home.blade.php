@@ -21,14 +21,14 @@
 <td>{{ $car->car_model }}</td>
 <td>{{ $car->car_color }}</td>
 <td>{{ $car->car_description }}</td>
-<td>{{ $car->id }}</td>
+<td>{{ $car->user_id }}</td>
 <td>
   <img src="{{ asset($car->image) }}">
 </td>
 
 
 <td>
-<form action="{{ route('delete',$car->id) }}" method="Post">
+<form action="{{ route('delete',$car->car_id) }}" method="Post">
 
 @csrf
 @method('DELETE')
@@ -37,7 +37,7 @@
 </form>
 
 
-<a class="btn btn-primary" href="{{ route('edit',$car->id) }}">Edit</a>
+<a class="btn btn-primary" href="{{ route('edit',$car->car_id) }}">Edit</a>
 </td>
 </tr>
 @endforeach

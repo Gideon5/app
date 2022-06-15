@@ -14,15 +14,18 @@ class CreateCarsTable extends Migration
     public function up()
     {
         Schema::create('cars', function (Blueprint $table) {
-            $table->bigIncrements('car_id');
+            $table->id('car_id');
             $table->string('car_name');
             $table->string('car_model');
             $table->string('car_color');
             $table->string('image');
             $table->string('car_description');
-            $table->id('id'); 
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('user_id')->on('users');
+            
 
-            $table->foreign('id')->references('id')->on('users');
+
+            
             $table->timestamps();
         });
     }

@@ -29,7 +29,7 @@ class User extends Authenticatable
     
     public function cars() 
     {
-        return $this->hasMany(Car::class, 'id', 'car_id');
+        return $this->hasMany(Car::class, 'user_id', 'user_id');
     }
 
     /**
@@ -50,4 +50,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    protected $primaryKey = 'user_id';
 }

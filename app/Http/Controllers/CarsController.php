@@ -39,7 +39,7 @@ class CarsController extends Controller
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
      $car->car_description = $request->car_description;
-     $car->id = Auth::id();
+     $car->user_id = Auth::id();
      
 
      if($request->hasfile('image'))
@@ -116,8 +116,10 @@ public function destroy(Car $car){
 
 public function details() {
 
-    $cars = Car::with('user')->get();
-    $users = User::with('cars')->get();
+    $cars = Car::with(['user'])->get();
+    $users = User::with(['cars'])->get();
+
+    dd($cars[1]->user());
 
       return view('cars.cars', compact('cars', 'users'));
      }
