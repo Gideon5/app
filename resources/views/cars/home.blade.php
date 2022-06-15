@@ -16,7 +16,7 @@
 </tr>
 @foreach ($cars as $car)
 <tr>
-<td>{{ $car->car_id }}</td>
+<td>{{ $car->id }}</td>
 <td>{{ $car->car_name }}</td>
 <td>{{ $car->car_model }}</td>
 <td>{{ $car->car_color }}</td>
@@ -28,7 +28,7 @@
 
 
 <td>
-<form action="{{ route('delete',$car->car_id) }}" method="Post">
+<form action="{{ route('delete',$car->id) }}" method="Post">
 
 @csrf
 @method('DELETE')
@@ -37,7 +37,7 @@
 </form>
 
 
-<a class="btn btn-primary" href="{{ route('edit',$car->car_id) }}">Edit</a>
+<a class="btn btn-primary" href="{{ route('edit',$car->id) }}">Edit</a>
 </td>
 </tr>
 @endforeach

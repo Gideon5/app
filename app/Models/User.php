@@ -29,7 +29,7 @@ class User extends Authenticatable
     
     public function cars() 
     {
-        return $this->hasMany(Car::class, 'user_id', 'user_id');
+        return $this->hasMany(Car::class, 'user_id', 'id');
     }
 
     /**
@@ -52,5 +52,5 @@ class User extends Authenticatable
     ];
 
 
-    protected $primaryKey = 'user_id';
+   
 }

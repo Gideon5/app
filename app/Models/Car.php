@@ -14,7 +14,7 @@ class Car extends Model
     ];
     use HasFactory;
 
-    protected $primaryKey = 'car_id';
+    
 
 
 

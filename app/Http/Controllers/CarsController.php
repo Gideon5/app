@@ -119,7 +119,7 @@ public function details() {
     $cars = Car::with(['user'])->get();
     $users = User::with(['cars'])->get();
 
-    dd($cars[1]->user());
+    
 
       return view('cars.cars', compact('cars', 'users'));
      }
