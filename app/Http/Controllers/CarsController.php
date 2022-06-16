@@ -10,6 +10,16 @@ use App\Models\User;
 class CarsController extends Controller
 {
 
+
+    public function __construct(){
+        $this->middleware('auth');
+    
+        }
+
+
+
+
+
     public function create() {
 
         return view('cars.create');

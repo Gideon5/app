@@ -23,6 +23,20 @@
 
 
 
+<td>
+<form action="/add" enctype="multipart/form-data" method="post">
+    @csrf             
+
+            <div class="row pt-4">
+                <button class="btn btn-primary">Add To Cart</button>
+            </div>
+</form>
+</td>
+
+
+
+
+
 
 
 
