@@ -35,7 +35,7 @@ Route::delete('/cars/home/{car}','App\Http\Controllers\CarsController@destroy')-
 Route::get('cars/users', 'App\Http\Controllers\CarsController@details')->name('users');
 
 
-Route::post('add', 'App\Http\Controllers\CartController@store');
+Route::post('add/{car_id}', 'App\Http\Controllers\CartController@store')->name('addCart');
 Route::get('cart', 'App\Http\Controllers\CartController@show');
 Route::delete('/cart/{cart}','App\Http\Controllers\CartController@delete')->name('delete');
 

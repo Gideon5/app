@@ -2,6 +2,9 @@
  
 <div class="container">
  <div class="">
+
+ <a  href="{{ url('/cart') }}"><button class="btn btn-primary">Show Cart</button></a>
+
    <h1>Cars</h1>
    <table class="table table-bordered">
 <tr>
@@ -24,13 +27,13 @@
 
 
 <td>
-<form action="/add" enctype="multipart/form-data" method="post">
-    @csrf             
 
-            <div class="row pt-4">
-                <button class="btn btn-primary">Add To Cart</button>
-            </div>
-</form>
+<td>
+    <button>
+<a class="btn btn-primary" href="{{ route('addCart',$car->id) }}">Add to Cart </a>
+</button>
+</td>
+
 </td>
 
 

@@ -14,17 +14,17 @@ class CartController extends Controller
     //
 
 
-    public function store() {
+    public function store(Request $request, $id) {
 
      $cart = new Cart;
-     $cart->car_id = Auth::id();
+     $cart->car_id = $request->id;
      $cart->save();
 
      
      
      
 
-     return redirect('/cars/cars');
+     return redirect('/cars/users');
 
 }
 
@@ -32,6 +32,8 @@ class CartController extends Controller
 
         $carts = Cart::with(['cars'])->get();
         $cars = Car::with(['carts'])->get();
+
+        
 
     
 
