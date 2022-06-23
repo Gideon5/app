@@ -49,7 +49,7 @@ class CarsController extends Controller
      $car->car_model = $request->car_model;
      $car->car_color = $request->car_color;
      $car->car_description = $request->car_description;
-     $car->user_id = Auth::id();
+     $car->user_id = $request->user_id;
      
 
      if($request->hasfile('image'))
